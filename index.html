@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+
+  <script defer src="scripts/script.js"></script>
+
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Splitter logo">
+    </div>
+    <div class="app">
+      <div class="left">
+        <div class="bill">
+          <div>
+            <label for="bill">Bill</label><span>Can't be zero!</span>
+          </div>
+          <input type="number" id="bill" class="input--bill" placeholder="0">
+        </div>
+        <div>
+          <label>Select tip %</label>
+          <div class="tip-select">
+            <button class="btn btn--tip">5%</button>
+            <button class="btn btn--tip">10%</button>
+            <button class="btn btn--tip">15%</button>
+            <button class="btn btn--tip">25%</button>
+            <button class="btn btn--tip">50%</button>
+            <input type="text" class="input--tip" placeholder="Custom">
+          </div>
+        </div>
+        <div class="people">
+          <div>
+            <label for="people">Number of people</label><span>Can't be zero!</span>
+          </div>
+          <input type="number" id="people" class="input--people" placeholder="0">
+        </div>
+      </div>
+      <div class="right">
+        <div class="amount">
+          <div class="tag">
+            <p>Tip Amount</p>
+            <p class="small-tag">/ person</p>
+          </div>
+          <div class="val tip-value">
+            $0.00
+          </div>
+        </div>
+        <div class="amount">
+          <div class="tag">
+            <p>Total</p>
+            <p class="small-tag">/ person</p>
+          </div>
+          <div class="val total-value">
+            $0.00
+          </div>
+        </div>
+        <button class="btn btn--reset">reset</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
