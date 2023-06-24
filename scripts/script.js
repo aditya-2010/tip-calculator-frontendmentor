@@ -21,6 +21,10 @@ function getTip(str) {
   return str.slice(0, 2);
 }
 
+function deactivateBtns() {
+  tipBtns.forEach((tipBtn) => tipBtn.classList.remove("tip--active"));
+}
+
 function renderValues() {
   const tipValue = (+inputBill.value * tip) / 100;
   const tipPP = +(tipValue / +inputPeople.value).toFixed(2);
@@ -45,7 +49,7 @@ inputBill.addEventListener("input", () => {
 
 tipSelect.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn--tip")) {
-    tipBtns.forEach((tipBtn) => tipBtn.classList.remove("tip--active"));
+    deactivateBtns();
     e.target.classList.add("tip--active");
 
     tip = +getTip(e.target.textContent);
@@ -55,6 +59,7 @@ tipSelect.addEventListener("click", (e) => {
 
 inputTip.addEventListener("input", () => {
   tip = inputTip.value;
+  deactivateBtns();
   renderValues();
 });
 
@@ -77,8 +82,8 @@ btnReset.addEventListener("click", () => {
   inputBill.value = "";
   inputTip.value = "";
   inputPeople.value = "";
-  tipBtns.forEach((tipBtn) => tipBtn.classList.remove("tip--active"));
   tip = 0;
+  deactivateBtns();
   tipValuePP.textContent = `$0.00`;
   totalValuePP.textContent = `$0.00`;
 });
