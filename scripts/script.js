@@ -43,6 +43,10 @@ function renderValues() {
 }
 
 inputBill.addEventListener("input", () => {
+  if (+inputBill.value === 0) {
+    bill.classList.add("error");
+    return;
+  }
   bill.classList.remove("error");
   renderValues();
 });
@@ -53,6 +57,7 @@ tipSelect.addEventListener("click", (e) => {
     e.target.classList.add("tip--active");
 
     tip = +getTip(e.target.textContent);
+    inputTip.value = "";
     renderValues();
   }
 });
@@ -65,7 +70,7 @@ inputTip.addEventListener("input", () => {
 
 inputPeople.addEventListener("input", () => {
   people.classList.remove("error");
-  if (+inputBill.value === 0 || inputBill.value === "") {
+  if (+inputBill.value === 0) {
     bill.classList.add("error");
     return;
   }
@@ -76,6 +81,18 @@ inputPeople.addEventListener("input", () => {
   }
 
   renderValues();
+});
+
+inputPeople.addEventListener("click", () => {
+  inputPeople.select();
+});
+
+inputBill.addEventListener("click", () => {
+  inputBill.select();
+});
+
+inputTip.addEventListener("click", () => {
+  inputTip.select();
 });
 
 btnReset.addEventListener("click", () => {
